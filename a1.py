@@ -39,15 +39,22 @@ class BreadthFirstSearch:
             if not self.valid_move(move):
                 continue
             # Check if move has already been explored.
-
+            if str(move) in self.explored:
+                continue
+            self.not_explored[str(move)] = self.pos_depth + 1
         # Since all next possible moves have been determined,
         # consider current location explored.
+        self.explored[self.pos_str] = self.pos_depth
+        self.path[self.pos[0], self.pos[1]] = self.pos_depth
+        self.not_explored.pop(self.pos_str, None)
 
         return True
 
     def goal_found(self):
-        if True:
+        if self.goal_str in self.not_explored:
             # Add goal to path.
+            goal = self.string_to_array(self.goal_str)
+            self.path[goal[0], goal[1]] = self.not_explored[self.goal_str]
             return True
         return False
 
@@ -59,8 +66,15 @@ class BreadthFirstSearch:
             reverse=False)
 
         # Determine the pos and depth of next move.
-
+        next_pos = self.string_to_array(sorted_not_explored[0])
+        next_pos_depth = self.not_explored[str(next_pos)]
         # Write depth of next move onto path.
+        self.path[next_pos[0], next_pos[1]] = next_pos_depth
+
+        # Move to the next position
+        self.pos = next_pos
+        self.pos_str = str(next_pos)
+        self.pos_depth = next_pos_depth
 
         return True
 
