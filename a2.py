@@ -1,17 +1,85 @@
 import numpy as np
-start = np.array([0, 0])
-goal = np.array([5, 9])
-grid = np.array([[0, 0, 0, 0, 0, 0, 0, 1, 0, 0],  # Row 0
-                 [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 1
-                 [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 2
-                 [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 3
-                 [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 4
-                 [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 5
-                 [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 6
-                 [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 7
-                 [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 8
-                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]) # Row 9
-        # Columns 0  1  2  3  4  5  6  7  8  9
+test = 4
+if test == 0:
+    # Fully explored count 65
+    # Moves to Goal 14
+    start = np.array([0, 0])
+    goal = np.array([5, 9])
+    grid = np.array([[0, 0, 0, 0, 0, 0, 0, 1, 0, 0],  # Row 0
+                    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 1
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 2
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 3
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 4
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 5
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 6
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 7
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 8
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]) # Row 9
+            # Columns 0  1  2  3  4  5  6  7  8  9
+elif test == 1:
+    # Fully explored count 7
+    # Moves to Goal 4
+    start = np.array([9, 9])
+    goal = np.array([5, 9])
+    grid = np.array([[0, 0, 0, 0, 0, 0, 0, 1, 0, 0],  # Row 0
+                    [0, 0, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 1
+                    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],  # Row 2
+                    [0, 1, 1, 0, 1, 1, 1, 1, 1, 0],  # Row 3
+                    [0, 1, 0, 1, 0, 0, 0, 0, 1, 1],  # Row 4
+                    [0, 1, 0, 1, 0, 0, 1, 0, 0, 0],  # Row 5
+                    [0, 1, 1, 0, 1, 1, 1, 0, 0, 0],  # Row 6
+                    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 7
+                    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 8
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]) # Row 9
+            # Columns 0  1  2  3  4  5  6  7  8  9
+elif test == 2:
+    # Fully explored count 59
+    # Moves to Goal 9
+    start = np.array([2, 4])
+    goal = np.array([9, 6])
+    grid = np.array([[0, 0, 0, 0, 0, 0, 0, 1, 0, 0],  # Row 0
+                    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 1
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 2
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 3
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 4
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 5
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 6
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 7
+                    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0],  # Row 8
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]) # Row 9
+            # Columns 0  1  2  3  4  5  6  7  8  9
+elif test == 3:
+    # Fully explored count 62
+    # Moves to Goal 22
+    start = np.array([0, 0])
+    goal = np.array([5, 9])
+    grid = np.array([[0, 1, 0, 0, 0, 0, 0, 1, 0, 0],  # Row 0
+                    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 1
+                    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 2
+                    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 3
+                    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 4
+                    [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],  # Row 5
+                    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 6
+                    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 7
+                    [0, 0, 0, 0, 0, 0, 0, 1, 1, 0],  # Row 8
+                    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0]]) # Row 9
+            # Columns 0  1  2  3  4  5  6  7  8  9
+else:
+    # Fully explored count 67
+    # Moves to Goal 33
+    start = np.array([0, 0])
+    goal = np.array([7, 2])
+    grid = np.array([[0, 0, 0, 0, 0, 0, 0, 1, 0, 0],  # Row 0
+                    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0],  # Row 1
+                    [0, 1, 1, 0, 0, 0, 1, 0, 0, 0],  # Row 2
+                    [0, 1, 1, 0, 0, 0, 1, 0, 0, 0],  # Row 3
+                    [0, 1, 1, 0, 0, 1, 0, 0, 0, 0],  # Row 4
+                    [0, 1, 1, 0, 1, 0, 0, 1, 1, 0],  # Row 5
+                    [0, 1, 1, 1, 0, 0, 0, 1, 0, 0],  # Row 6
+                    [0, 1, 0, 0, 0, 1, 1, 1, 0, 1],  # Row 7
+                    [0, 1, 1, 1, 1, 1, 0, 0, 0, 0],  # Row 8
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]) # Row 9
+            # Columns 0  1  2  3  4  5  6  7  8  9
 
 # Copies of grid to be used for visualizing results.
 path = np.zeros([len(grid), len(grid)], dtype=int)
@@ -41,15 +109,26 @@ class AStarSearch:
             if not self.valid_move(move):
                 continue
             # Check if move has already been explored.
-                # Visualize the Heuristic Grid
+            if (str(move) in self.explored) or (str(move) in self.not_explored):
+                continue
+            # Visualize the Heuristic Grid
+            self.h_grid[move[0], move[1]] = self.heuristic(move) + self.pos_depth + 1
+            self.not_explored[str(move)] = self.h_grid[move[0], move[1]]
 
         # Since all next possible moves have been determined,
         # consider current location explored.
+        self.explored[self.pos_str] = self.pos_depth
+        self.path[self.pos[0], self.pos[1]] = self.pos_depth
+        self.not_explored.pop(self.pos_str, None)
+
         return True
 
     def goal_found(self):
-        if True:
+        if self.goal_str in self.not_explored:
             # Add goal to path.
+            self.pos = self.string_to_array(self.goal_str)
+            self.pos_depth = self.not_explored.pop(self.goal_str)
+            self.path[self.pos[0], self.pos[1]] = self.pos_depth
             return True
         return False
 
@@ -61,13 +140,18 @@ class AStarSearch:
             reverse=False)
 
         # Determine the pos and depth of next move.
-        
+        self.pos_str = sorted_not_explored[0]
+        self.pos = self.string_to_array(self.pos_str)
+        self.pos_depth = self.not_explored.pop(self.pos_str) - self.heuristic(self.pos)
         # Write depth of next move onto path.
+        self.path[self.pos[0], self.pos[1]] = round(self.pos_depth, 1)
 
         return True
 
     def heuristic(self, move):
-        answer = 0.0
+        distance = move - goal
+        distance_squared = distance * distance
+        answer = np.sqrt(sum(distance_squared))
         return round(answer, 1)
 
     # END - Student Section
